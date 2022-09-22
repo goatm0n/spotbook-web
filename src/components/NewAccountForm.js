@@ -11,7 +11,7 @@ class NewAccountForm extends React.Component {
     };
 
     componentDidMount() {
-        if (this.props.student) {
+        if (this.props.account) {
             const {email, username, password} = this.props.account;
             this.setState({email, username, password});
         }

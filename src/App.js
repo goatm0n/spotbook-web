@@ -1,13 +1,23 @@
+import React, { Component } from 'react';
 import './App.css';
-import Accounts from './components/Accounts';
+import LoginModal from './components/LoginModal';
 
-function App() {
-        
-    return (
+class App extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+        };
+    }
+
+    render() {
+        return (
         <div className="App">
-            <Accounts></Accounts>
+            <LoginModal></LoginModal>
         </div>
-    );
+        );
+    }
 }
 
 export default App;
