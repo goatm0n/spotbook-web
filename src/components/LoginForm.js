@@ -19,10 +19,10 @@ class LoginForm extends Component {
 
     login = e => {
         e.preventDefault();
-        axios.post(API_URL + "login/", this.state).then(() => {
-                this.props.resetState();
-                this.props.toggle();
-            });
+        axios.post(API_URL + "api/users/token/", this.state).then((authToken) => {  
+            this.props.toggle();
+            this.props.onLogin(authToken.data);
+        });
     };
 
     render () {

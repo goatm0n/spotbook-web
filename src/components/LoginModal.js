@@ -28,9 +28,9 @@ class LoginModal extends Component {
                     <ModalHeader toggle={this.toggle}>Logging in</ModalHeader>
                     <ModalBody>
                         <LoginForm
-                            resetState={this.props.resetState}
                             toggle={this.toggle}
                             account={this.props.account}
+                            onLogin={this.props.onLogin}
                         >
                         </LoginForm>
                     </ModalBody>
