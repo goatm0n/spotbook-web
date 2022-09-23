@@ -24,8 +24,8 @@ class App extends Component {
     render() {
         return (
         <div className="App">
-            <LoginModal onLogin={this.handleAuthToken}/>
-            <NewClipModal/> 
+            <LoginModal onLogin={this.handleAuthToken} />
+            <NewClipModal accessToken={this.state.authToken.access}/> 
         </div>
         );
     }
