@@ -1,9 +1,9 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import './App.css';
 import NewClipModal from './components/NewClipModal';
 import LoginModal from './components/LoginModal';
-import { API_URL } from './constants';
+import NewSpotModal from './components/NewSpotModal';
+
 
 class App extends Component {
     
@@ -25,7 +25,8 @@ class App extends Component {
         return (
         <div className="App">
             <LoginModal onLogin={this.handleAuthToken} />
-            <NewClipModal accessToken={this.state.authToken.access}/> 
+            <NewClipModal accessToken={this.state.authToken.access} /> 
+            <NewSpotModal auth={this.state.authToken.access} />
         </div>
         );
     }
