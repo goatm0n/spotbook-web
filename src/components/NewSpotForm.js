@@ -6,7 +6,7 @@ import { SPOTS_API_URL } from "../constants";
 class NewSpotForm extends Component {
     state = {
         title: "",
-        spotType: "",
+        spotType: "Street",
         description: "",
         lat: "",
         lon: "",
@@ -31,10 +31,8 @@ class NewSpotForm extends Component {
 
     create = e => {
         e.preventDefault();
-
         const lon = parseFloat(this.state.lon);
         const lat = parseFloat(this.state.lat);
-
         axios({
             method: 'post',
             url: SPOTS_API_URL + "create/",
@@ -53,8 +51,7 @@ class NewSpotForm extends Component {
                     description: this.state.description
                 }
             }
-            
-        }).catch((e) => console.log(e));
+        });
     };
 
     render() {
@@ -95,6 +92,17 @@ class NewSpotForm extends Component {
                         onChange={this.onChange}
                         value={this.defaultIfEmpty(this.state.lon)}
                     />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="spotType">SpotType:</Label>
+                    <Input 
+                        type="select"
+                        name="spotType"
+                    >
+                        <option value={"Street"}>Street</option>
+                        <option value={"D.I.Y"}>D.I.Y</option>
+                        <option value={"Skatepark"}>Skatepark</option>
+                    </Input>
                 </FormGroup>
                 <Button>Send</Button>
             </Form>
