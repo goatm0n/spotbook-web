@@ -5,6 +5,7 @@ import LoginModal from './components/LoginModal';
 import NewSpotModal from './components/NewSpotModal';
 import EditProfileModal from './components/EditProfileModal';
 import ProfilesModal from './components/ProfilesModal';
+import AccountsModal from './components/AccountsModal';
 
 class App extends Component {
     
@@ -30,6 +31,7 @@ class App extends Component {
             <NewSpotModal auth={this.state.authToken.access} />
             <EditProfileModal />
             <ProfilesModal />
+            <AccountsModal />
         </div>
         );
     }

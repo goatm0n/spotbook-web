@@ -15,7 +15,13 @@ class Accounts extends Component {
     }
 
     getAccounts = () => {
-        axios.get(ACCOUNTS_API_URL + "list/").then(res => this.setState({accounts: res.data}));
+        if (this.props.accounts) {
+            this.setState({accounts: this.props.accounts});
+        }
+        else {
+            axios.get(ACCOUNTS_API_URL + "list/").then(res => this.setState({accounts: res.data}));
+        }
+        
     }
 
     resetState = () => {
