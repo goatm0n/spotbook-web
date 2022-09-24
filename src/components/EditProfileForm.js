@@ -5,9 +5,17 @@ import { PROFILES_API_URL } from "../constants";
 
 class EditProfileForm extends React.Component {
     state = {
+        user: "",
         full_name: "",
         bio: "",
     };
+
+    componentDidMount() {
+        if (this.props.profile) {
+            const {user, full_name, bio} = this.props.profile;
+            this.setState({user, full_name, bio});
+        }
+    }
 
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
