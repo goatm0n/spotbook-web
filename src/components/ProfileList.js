@@ -9,6 +9,7 @@ class ProfileList extends Component {
             <Table dark>
                 <thead>
                     <tr>
+                        <th>User</th>
                         <th>Full Name</th>
                         <th>Bio</th>
                         <th></th>
@@ -23,8 +24,9 @@ class ProfileList extends Component {
                         </tr>
                     ) : (
                         profiles.map(profile => (
-                            <tr key={profile.id}>
-                                <td>{profile.username}</td>
+                            <tr key={profile.user}>
+                                <td>{profile.user}</td>
+                                <td>{profile.full_name}</td>
                                 <td>{profile.email}</td>
                                 <td align="center">
                                     <EditProfileModal

@@ -4,7 +4,7 @@ import NewClipModal from './components/NewClipModal';
 import LoginModal from './components/LoginModal';
 import NewSpotModal from './components/NewSpotModal';
 import EditProfileModal from './components/EditProfileModal';
-
+import ProfilesModal from './components/ProfilesModal';
 
 class App extends Component {
     
@@ -29,6 +29,7 @@ class App extends Component {
             <NewClipModal accessToken={this.state.authToken.access} /> 
             <NewSpotModal auth={this.state.authToken.access} />
             <EditProfileModal />
+            <ProfilesModal />
         </div>
         );
     }

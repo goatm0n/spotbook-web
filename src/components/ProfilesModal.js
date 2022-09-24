@@ -1,11 +1,22 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
-import EditProfileForm from "./EditProfileForm";
+import Profiles from "./Profiles";
 
-class EditProfileModal extends Component {
+class ProfilesModal extends Component {
     state = {
-        modal: false
+        modal: false,
+        profiles: false,
+        name: "Profiles"
     };
+
+    componentDidMount() {
+        if (this.props.profiles) {
+            this.setState({profiles: this.props.profiles});
+        }
+        if (this.props.name) {
+            this.setState({name: this.props.name})
+        }
+    }
 
     toggle = () => {
         this.setState(previous => ({
@@ -13,7 +24,7 @@ class EditProfileModal extends Component {
         }));
     };
 
-    render() {    
+    render() {
         return (
             <Fragment>
                 <Button
@@ -22,20 +33,17 @@ class EditProfileModal extends Component {
                     onClick={this.toggle}
                     style={{ minWidth: "200px" }}
                 >
-                    Edit Profile
+                    {this.state.name}
                 </Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>Editing Profile</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                     <ModalBody>
-                        <EditProfileForm 
-                            toggle={this.toggle}
-                            profile={this.props.profile}
-                        />
+                        <Profiles profiles={this.state.profiles}/>
                     </ModalBody>
                 </Modal>
             </Fragment>
-        );
+        )
     }
 }
 
-export default EditProfileModal;
+export default ProfilesModal;
