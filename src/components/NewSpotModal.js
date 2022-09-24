@@ -31,7 +31,7 @@ class NewSpotModal extends Component {
                         <NewSpotForm
                             toggle={this.toggle}
                             spot={this.props.spot}
-                            auth={this.props.accessToken}
+                            auth={this.props.auth}
                         >
                         </NewSpotForm>
                     </ModalBody>

@@ -8,6 +8,8 @@ class NewSpotForm extends Component {
         title: "",
         spotType: "",
         description: "",
+        lat: "",
+        lon: "",
         auth: ""
     };
 
@@ -29,6 +31,10 @@ class NewSpotForm extends Component {
 
     create = e => {
         e.preventDefault();
+
+        const lon = parseFloat(this.state.lon);
+        const lat = parseFloat(this.state.lat);
+
         axios({
             method: 'post',
             url: SPOTS_API_URL + "create/",
@@ -36,11 +42,19 @@ class NewSpotForm extends Component {
                 Authorization: this.state.auth
             },
             data: {
-                title: this.state.title,
-                spotType: this.state.spotType,
-                description: this.state.description
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [lon, lat]
+                },
+                properties: {
+                    title: this.state.title,
+                    spotType: "Street",
+                    description: this.state.description
+                }
             }
-        });
+            
+        }).catch((e) => console.log(e));
     };
 
     render() {
@@ -62,6 +76,24 @@ class NewSpotForm extends Component {
                         name="description"
                         onChange={this.onChange}
                         value={this.defaultIfEmpty(this.state.description)}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="lat">Latitude:</Label>
+                    <Input
+                        type="text"
+                        name="lat"
+                        onChange={this.onChange}
+                        value={this.defaultIfEmpty(this.state.lat)}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="lon">Longitude:</Label>
+                    <Input
+                        type="text"
+                        name="lon"
+                        onChange={this.onChange}
+                        value={this.defaultIfEmpty(this.state.lon)}
                     />
                 </FormGroup>
                 <Button>Send</Button>
