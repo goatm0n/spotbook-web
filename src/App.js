@@ -7,6 +7,7 @@ import EditProfileModal from './components/EditProfileModal';
 import ProfilesModal from './components/ProfilesModal';
 import AccountsModal from './components/AccountsModal';
 import ClipsModal from './components/ClipsModal';
+import SpotsModal from './components/SpotsModal';
 
 class App extends Component {
     
@@ -34,6 +35,8 @@ class App extends Component {
             <ProfilesModal />
             <AccountsModal />
             <ClipsModal />
+            <SpotsModal />
+            
         </div>
         );
     }
