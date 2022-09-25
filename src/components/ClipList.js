@@ -12,7 +12,6 @@ class ClipList extends Component {
                         <th>Spot</th>
                         <th>Text Content</th>
                         <th>Likes</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,12 +22,12 @@ class ClipList extends Component {
                             </td>
                         </tr>
                     ) : (
-                        clips.map(profile => (
-                            <tr key={clips.id}>
-                                <td>{clips.user}</td>
-                                <td>{clips.spot}</td>
-                                <td>{clips.textContent}</td>
-                                <td>{clips.likes.length}</td>
+                        clips.map(clip => (
+                            <tr key={clip.id}>
+                                <td>{clip.user}</td>
+                                <td>{clip.spot}</td>
+                                <td>{clip.textContent}</td>
+                                <td>{clip.likes.length}</td>
                             </tr>
                         ))
                     )};    
