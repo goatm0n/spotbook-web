@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
-import Followers from "./Followers";
+import Likes from "./Likes";
 
-class FollowersModal extends Component {
+class LikesModal extends Component {
     state = {
         modal: false,
-        name: "Followers",
+        name: "Likes",
         id: "",
         type: "",
     };
@@ -48,7 +48,7 @@ class FollowersModal extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                     <ModalBody>
-                        <Followers 
+                        <Likes 
                             id={this.state.id} 
                             type={this.state.type}
                         />
@@ -59,4 +59,4 @@ class FollowersModal extends Component {
     }
 }
 
-export default FollowersModal;
+export default LikesModal;
