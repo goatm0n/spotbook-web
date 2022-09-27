@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
+import LikesModal from "./LikesModal";
 
 class ClipList extends Component {
     render() {
@@ -27,7 +28,12 @@ class ClipList extends Component {
                                 <td>{clip.user}</td>
                                 <td>{clip.spot}</td>
                                 <td>{clip.textContent}</td>
-                                <td>{clip.likes.length}</td>
+                                <td><LikesModal 
+                                    type="clip"
+                                    id={clip.id}
+                                    count={clip.likes.length}
+                                />
+                                </td>
                             </tr>
                         ))
                     )};    
