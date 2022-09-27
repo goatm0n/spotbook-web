@@ -35,7 +35,7 @@ class ProfilesModal extends Component {
                 >
                     {this.state.name}
                 </Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                <Modal size="lg" isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                     <ModalBody>
                         <Profiles profiles={this.state.profiles}/>

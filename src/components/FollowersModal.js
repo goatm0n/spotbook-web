@@ -30,6 +30,11 @@ class FollowersModal extends Component {
     };
 
     render() {
+        let buttonText = this.state.name;
+        if (this.props.count) {
+            buttonText = this.props.count;
+        }
+
         return (
             <Fragment>
                 <Button
@@ -38,7 +43,7 @@ class FollowersModal extends Component {
                     onClick={this.toggle}
                     style={{ minWidth: "200px" }}
                 >
-                    {this.state.name}
+                    {buttonText}
                 </Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>

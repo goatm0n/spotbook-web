@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 import EditProfileModal from "./EditProfileModal";
+import FollowersModal from "./FollowersModal";
 
 class ProfileList extends Component {
     render() {
@@ -12,6 +13,7 @@ class ProfileList extends Component {
                         <th>User</th>
                         <th>Full Name</th>
                         <th>Bio</th>
+                        <th>Followers</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -28,6 +30,13 @@ class ProfileList extends Component {
                                 <td>{profile.user}</td>
                                 <td>{profile.full_name}</td>
                                 <td>{profile.email}</td>
+                                <td align="center">
+                                    <FollowersModal
+                                        type="profile"
+                                        id={profile.user}
+                                        count={profile.followers.length}
+                                    />
+                                </td>
                                 <td align="center">
                                     <EditProfileModal
                                         profile={profile}

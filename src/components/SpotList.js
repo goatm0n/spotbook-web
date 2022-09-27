@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
+import FollowersModal from "./FollowersModal";
 
 class SpotList extends Component {
     render() {
@@ -31,7 +32,15 @@ class SpotList extends Component {
                                 <td>{spot.properties.spotType}</td>
                                 <td>{spot.properties.description}</td>
                                 <td>{spot.properties.likes.length}</td>
-                                <td>{spot.properties.followers.length}</td>
+                                <td align="center">
+                                    <FollowersModal 
+                                        type="spot"
+                                        id={spot.id}
+                                        count={spot.properties.followers.length}
+                                    />
+                                    &nbsp;
+                                    &nbsp;
+                                </td>
                             </tr>
                         ))
                     )};    
