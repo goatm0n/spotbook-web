@@ -8,6 +8,7 @@ import ProfilesModal from './components/ProfilesModal';
 import AccountsModal from './components/AccountsModal';
 import ClipsModal from './components/ClipsModal';
 import SpotsModal from './components/SpotsModal';
+import FollowersModal from './components/FollowersModal';
 
 class App extends Component {
     
@@ -36,7 +37,7 @@ class App extends Component {
             <AccountsModal />
             <ClipsModal />
             <SpotsModal />
-            
+            <FollowersModal id="2" type="profile" />
         </div>
         );
     }
