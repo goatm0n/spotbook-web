@@ -32,8 +32,8 @@ class LikesModal extends Component {
     render() {
         let buttonText = this.state.name;
         if (this.props.count) {
-            buttonText = this.props.count;
-        }
+            buttonText += ": " + this.props.count;
+        } 
 
         return (
             <Fragment>
@@ -41,7 +41,6 @@ class LikesModal extends Component {
                     color="primary"
                     className="float-right"
                     onClick={this.toggle}
-                    style={{ minWidth: "100px" }}
                 >
                     {buttonText}
                 </Button>

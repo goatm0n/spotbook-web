@@ -32,7 +32,7 @@ class SpotList extends Component {
                                 <td>{spot.properties.title}</td>
                                 <td>{spot.properties.spotType}</td>
                                 <td>{spot.properties.description}</td>
-                                <td>
+                                <td align="center">
                                     <LikesModal 
                                         type="spot"
                                         id={spot.id}
