@@ -33,6 +33,7 @@ class Spots extends Component {
                         <SpotList
                             spots={this.state.spots}
                             resetState={this.resetState}
+                            auth={this.props.auth}
                         />
                     </Col>
                 </Row>

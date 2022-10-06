@@ -38,7 +38,7 @@ class SpotsModal extends Component {
                 <Modal size="lg" isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                     <ModalBody>
-                        <Spots spots={this.state.spots}/>
+                        <Spots spots={this.state.spots} auth={this.props.auth} />
                     </ModalBody>
                 </Modal>
             </Fragment>

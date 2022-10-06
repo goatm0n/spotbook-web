@@ -8,8 +8,6 @@ import ProfilesModal from './components/ProfilesModal';
 import AccountsModal from './components/AccountsModal';
 import ClipsModal from './components/ClipsModal';
 import SpotsModal from './components/SpotsModal';
-import FollowersModal from './components/FollowersModal';
-import LikesModal from './components/LikesModal';
 
 class App extends Component {
     
@@ -36,10 +34,8 @@ class App extends Component {
             <EditProfileModal />
             <ProfilesModal />
             <AccountsModal />
-            <ClipsModal />
-            <SpotsModal />
-            <FollowersModal id="2" type="profile" />
-            <LikesModal id="1" type="clip" />
+            <ClipsModal auth={this.state.authToken.access} />
+            <SpotsModal auth={this.state.authToken.access} />
         </div>
         );
     }

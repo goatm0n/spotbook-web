@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "reactstrap";
 import LikesModal from "./LikesModal";
+import LikeToggleButton from "./LikeToggleButton";
 
 class ClipList extends Component {
     render() {
@@ -12,6 +13,7 @@ class ClipList extends Component {
                         <th>User</th>
                         <th>Spot</th>
                         <th>Text Content</th>
+                        <th>Like</th>
                         <th>Likes</th>
                     </tr>
                 </thead>
@@ -28,6 +30,9 @@ class ClipList extends Component {
                                 <td>{clip.user}</td>
                                 <td>{clip.spot}</td>
                                 <td>{clip.textContent}</td>
+                                <td>
+                                    <LikeToggleButton type="clip" id={clip.id} auth={this.props.auth} />
+                                </td>
                                 <td><LikesModal 
                                     type="clip"
                                     id={clip.id}

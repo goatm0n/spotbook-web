@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Table } from "reactstrap";
 import FollowersModal from "./FollowersModal";
 import LikesModal from "./LikesModal";
+import LikeToggleButton from "./LikeToggleButton";
 
 class SpotList extends Component {
     render() {
@@ -12,8 +13,8 @@ class SpotList extends Component {
                     <tr>
                         <th>User</th>
                         <th>Title</th>
-                        <th>Spot Type</th>
                         <th>Description</th>
+                        <th>Like</th>
                         <th>Likes</th>
                         <th>Followers</th>
                     </tr>
@@ -30,8 +31,10 @@ class SpotList extends Component {
                             <tr key={spot.id}>
                                 <td>{spot.properties.user}</td>
                                 <td>{spot.properties.title}</td>
-                                <td>{spot.properties.spotType}</td>
                                 <td>{spot.properties.description}</td>
+                                <td align="center">
+                                    <LikeToggleButton type="spot" id={spot.id} auth={this.props.auth}/>
+                                </td>
                                 <td align="center">
                                     <LikesModal 
                                         type="spot"

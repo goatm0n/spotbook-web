@@ -33,6 +33,7 @@ class Clips extends Component {
                         <ClipList
                             clips={this.state.clips}
                             resetState={this.resetState}
+                            auth={this.props.auth}
                         />
                     </Col>
                 </Row>

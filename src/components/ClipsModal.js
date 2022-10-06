@@ -38,7 +38,7 @@ class ClipsModal extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                     <ModalBody>
-                        <Clips clips={this.state.clips}/>
+                        <Clips clips={this.state.clips} auth={this.props.auth}/>
                     </ModalBody>
                 </Modal>
             </Fragment>
