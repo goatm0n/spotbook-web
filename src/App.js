@@ -32,7 +32,7 @@ class App extends Component {
             <NewClipModal accessToken={this.state.authToken.access} /> 
             <NewSpotModal auth={this.state.authToken.access} />
             <EditProfileModal />
-            <ProfilesModal />
+            <ProfilesModal auth={this.state.authToken.access} />
             <AccountsModal />
             <ClipsModal auth={this.state.authToken.access} />
             <SpotsModal auth={this.state.authToken.access} />

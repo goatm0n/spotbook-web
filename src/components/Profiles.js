@@ -34,6 +34,7 @@ class Profiles extends Component {
                         <ProfileList
                             profiles={this.state.profiles}
                             resetState={this.resetState}
+                            auth={this.props.auth}
                         />
                     </Col>
                 </Row>

@@ -38,7 +38,7 @@ class ProfilesModal extends Component {
                 <Modal size="lg" isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                     <ModalBody>
-                        <Profiles profiles={this.state.profiles}/>
+                        <Profiles profiles={this.state.profiles} auth={this.props.auth} />
                     </ModalBody>
                 </Modal>
             </Fragment>
